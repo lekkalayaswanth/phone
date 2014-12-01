@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html>
+<script type="text/javascript" src="jquery.min.js"></script>
+<body>
+
+<input id="number" type="text" />
+<button id="validateNumber">Validate</button>
+
+<script type="text/javascript">
+alert($("#number").val());
+//isNaN = is Not a Number
+$("#validateNumber").click(function(){
+	$("#number").val($("#number").val().replace(/ /g,''));
+	if(isNaN($("#number").val())){
+		alert("Enter a number");
+		$("#number").val("");
+	}
+	else {
+		if($("#number").val().length == 10) {
+			alert("Valid phone number");
+		}
+		else {
+			alert("Enter a valid phone number");
+			$("#number").val("");
+		}
+	}
+});
+</script>
+
+</body>
+</html>
